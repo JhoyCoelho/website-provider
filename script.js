@@ -1,4 +1,31 @@
 /* ============================================
+   MENU HAMBURGER MOBILE
+   ============================================ */
+function toggleMenu() {
+    const navLinks = document.getElementById('navLinks');
+    const menuToggle = document.getElementById('menuToggle');
+    
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+}
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('#navLinks a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('menuToggle').classList.remove('active');
+    });
+});
+
+// Fechar menu ao redimensionar a tela
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        document.getElementById('navLinks').classList.remove('active');
+        document.getElementById('menuToggle').classList.remove('active');
+    }
+});
+
+/* ============================================
    SCROLL SUAVE E NAVEGAÇÃO
    ============================================ */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
