@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FyberLink Provedor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <span class="logo-icon"></span>
+                    <span class="logo-text">FYBERLINK</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#planos">Planos</a>
+                    <a href="#diferenciais">Diferenciais</a>
+                    <a href="#contato">Contato</a>
+                </nav>
+                <button class="btn-primary" onclick="document.getElementById('planos').scrollIntoView({ behavior: 'smooth' })">Assine Agora</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Você merece a<br><span class="highlight">melhor conexão</span></h1>
+                    <p class="hero-description">
+                        Experimente a internet de fibra óptica mais rápida e estável da região.
+                        Planos perfeitos para você e sua família.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn-primary btn-lg">Ver Planos</button>
+                        <button class="btn-secondary btn-lg">Fale Conosco</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <strong>99,9%</strong>
+                            <p>Estabilidade</p>
+                        </div>
+                        <div class="stat">
+                            <strong>24h</strong>
+                            <p>Atendimento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planos Section -->
+    <section id="planos" class="planos">
+        <div class="container">
+            <h2>Planos feitos para <span class="highlight">você</span></h2>
+            <p class="section-subtitle">Escolha o plano ideal para suas necessidades e aproveite nossas promoções especiais.</p>
+            
+            <div class="planos-grid">
+                <!-- Plano Básico -->
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Plano Básico</h3>
+                    </div>
+                    <div class="plano-badge">
+                        <!-- badge vazio para este plano -->
+                    </div>
+                    <!-- NOVO -->
+                    <span class="old-speed">150 Mbps</span>
+
+                    <!-- NOVO -->
+                    <div class="bonus-badge">🎁 +100 Mbps Grátis</div>
+                    <div class="plano-speed">
+                        <span class="speed-number">250</span>
+                        <span class="speed-unit">Mbps</span>
+                    </div>
+                    <!-- NOVO -->
+                    <div class="divider"></div>
+
+                    <div class="plano-price">
+                        <span class="price">
+                            <small>R$</small> 79,99 <small>/mês</small>
+                        </span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="enviarWhatsApp('Plano Básico')">Assinar Agora</button>
+                </div>
+
+                <!-- Plano Ultra (Destaque) -->
+                <div class="plano-card featured">
+                    <div class="plano-badge featured-badge">MAIS POPULAR</div>
+                    <div class="plano-header">
+                        <h3>Plano Ultra</h3>
+                    </div>
+                    <span class="old-speed">400 Mbps</span>
+                    <div class="bonus-badge">🎁 +200 Mbps Grátis</div>
+                    <div class="plano-speed">
+                        <span class="speed-number-featured">600</span>
+                        <span class="speed-unit">Mbps</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="plano-price">
+                        <span class="price">
+                            <small>R$</small> 104,99 <small>/mês</small>
+                        </span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="enviarWhatsApp('Plano Ultra')">Assinar Agora</button>
+                </div>
+
+                <!-- Plano Gamer -->
+                <div class="plano-card">
+                    <div class="plano-header">
+                        <h3>Plano Gamer</h3>
+                    </div>
+                    <span class="old-speed">600 Mbps</span>
+                    <div class="bonus-badge">🎁 +200 Mbps Grátis</div>
+                    <div class="plano-speed">
+                        <span class="speed-number">800</span>
+                        <span class="speed-unit">Mbps</span>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="plano-price">
+                        <span class="price">
+                            <small>R$</small> 164,99 <small>/mês</small>
+                        </span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="enviarWhatsApp('Plano Gamer')">Assinar Agora</button>
+                </div>
+
+                <!-- Plano Infinity -->
+                <div class="plano-card infinity">
+                    <div class="plano-header">
+                        <h3>Infinity</h3>
+                    </div>
+                    <div class="plano-speed">
+                        <span class="speed-banda-livre">Banda Livre</span>
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="plano-price">
+                        <span class="price">
+                            <small>R$</small> 239,99 <small>/mês</small>
+                        </span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="enviarWhatsApp('Plano Infinity')">Assinar Agora</button>
+                </div>
+            </div>
+            <p class="planos-subtitle">Valores promocionais válidos para novos clientes. Consulte disponibilidade na sua região.</p>
+        </div>
+    </section>
+
+    <!-- Diferenciais Section -->
+    <section id="diferenciais" class="diferenciais">
+    <div class="container">
+        <h2>Por que escolher a <span class="highlight">Fyberlink?</span></h2>
+        <p class="section-subtitle">
+            Mais do que internet rápida, oferecemos uma experiência completa
+        </p>
+
+        <div class="diferenciais-grid">
+
+            <!-- 1 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- Foguete -->
+                     <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M13 3L4 14H11L9 21L20 10H13L13 3Z"/>
+                    </svg>
+                </div>
+                <h3>Alta Velocidade</h3>
+                <p>Conexão de fibra óptica com velocidade garantida e estável</p>
+            </div>
+
+            <!-- 2 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- Escudo -->
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M12 2L4 5V11C4 16 8 20 12 22C16 20 20 16 20 11V5L12 2Z"/>
+                    </svg>
+                </div>
+                <h3>99,9% de Estabilidade</h3>
+                <p>Rede robusta e redundante para garantir sua conexão sempre ativa</p>
+            </div>
+
+            <!-- 3 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- Headset -->
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M12 2C7 2 3 6 3 11V17C3 18 4 19 5 19H7V12H5C5 7 8 4 12 4C16 4 19 7 19 12H17V19H19C20 19 21 18 21 17V11C21 6 17 2 12 2Z"/>
+                    </svg>
+                </div>
+                <h3>Suporte Segunda à Sábado</h3>
+                <p>Equipe especializada de segunda a sábado para te atender</p>
+            </div>
+
+            <!-- 4 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- Relógio -->
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M12 2A10 10 0 1 0 12 22A10 10 0 1 0 12 2ZM12 6H13V12L17 14L16 16L11 13V6Z"/>
+                    </svg>
+                </div>
+                <h3>Instalação em 24h</h3>
+                <p>A instalação mais rápida da região, dentro de 24 horas</p>
+            </div>
+
+            <!-- 5 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- WiFi -->
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M12 18C13.1 18 14 18.9 14 20C14 21.1 13.1 22 12 22C10.9 22 10 21.1 10 20C10 18.9 10.9 18 12 18ZM2 9C6 5 18 5 22 9L20 11C16 7 8 7 4 11L2 9ZM6 13C9 10 15 10 18 13L16 15C14 13 10 13 8 15L6 13Z"/>
+                    </svg>
+                </div>
+                <h3>Wi-Fi 6 Disponível</h3>
+                <p>Tecnologia Wi-Fi 6 disponível em planos selecionados</p>
+            </div>
+
+            <!-- 6 -->
+            <div class="diferencial-card">
+                <div class="diferencial-icon">
+                    <!-- Check -->
+                    <svg viewBox="0 0 24 24">
+                        <path fill="white" d="M9 16.2L4.8 12L3.4 13.4L9 19L21 7L19.6 5.6L9 16.2Z"/>
+                    </svg>
+                </div>
+                <h3>Sem Fidelidade</h3>
+                <p>Cancele quando quiser, sem multas ou taxas</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para ter a melhor internet?</h2>
+                <p>Entre em contato agora e descubra qual plano é o perfeito para você</p>
+                <button class="btn-white btn-lg">Falar com Especialista</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Vamos conversar sobre<br>sua <span class="highlight">conexão ideal</span></h2>
+            <p class="section-subtitle">Nossa equipe está pronta para te ajudar a escolher o melhor plano</p>
+
+            <div class="contato-container">
+                <!-- Formulário -->
+                <form id="form-contato" class="contato-form">
+                    <div class="form-group">
+                        <input id="nome" type="text" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input id="email" type="email" placeholder="seu@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <input id="contato"type="tel" placeholder="(XX) XXXXX-XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="mensagem" placeholder="Como podemos te ajudar?" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-block">Enviar Mensagem</button>
+                </form>
+
+                <!-- Informações de Contato -->
+                <div class="contato-info">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="white" d="M6.6 10.8C8.2 14 10.8 16.6 14 18.2L16.2 16C16.5 15.7 17 15.6 17.4 15.7C18.7 16.1 20.1 16.3 21.5 16.3C22 16.3 22.5 16.8 22.5 17.3V21C22.5 21.5 22 22 21.5 22C10.7 22 2 13.3 2 2.5C2 2 2.5 1.5 3 1.5H6.7C7.2 1.5 7.7 2 7.7 2.5C7.7 3.9 7.9 5.3 8.3 6.6C8.4 7 8.3 7.5 8 7.8L6.6 10.8Z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Telefone</h4>
+                            <p>(91) 98626-3316</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item-email">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="white" d="M20 4H4C3 4 2 5 2 6V18C2 19 3 20 4 20H20C21 20 22 19 22 18V6C22 5 21 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>E-mail</h4>
+                            <p>fyberlinkprovedor@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path fill="white" d="M12 2C8 2 5 5 5 9C5 14 12 22 12 22C12 22 19 14 19 9C19 5 16 2 12 2ZM12 11C10.9 11 10 10.1 10 9C10 7.9 10.9 7 12 7C13.1 7 14 7.9 14 9C14 10.1 13.1 11 12 11Z"/>
+                            </svg>
+                        </div>
+                        <div class="info-content">
+                            <h4>Endereço</h4>
+                            <p>Rod. Eng. Augusto Meira Filho</p>
+                            <p>Pau Darco</p>
+                            <p>Santa Bárbara do Pará - PA</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item horario">
+                        <h4>Horário de Atendimento</h4>
+                        <p>Segunda à Sábado 8h às 18h</p>
+                        <p>Atendimento em 24h</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-item">
+                    <h4>FYBERLINK</h4>
+                    <p>Internet fibra óptica de alta velocidade para sua região</p>
+                </div>
+                <div class="footer-item">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#planos">Planos</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h4>Contato</h4>
+                    <p>☎ (91) 98626-3316</p>
+                    <p>📧 fyberlinkprovedor@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FyberLink. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
