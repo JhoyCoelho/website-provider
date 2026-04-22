@@ -806,7 +806,7 @@ button {
     }
 
     .hero h1 {
-        font-size: 50px;
+        font-size: 40px;
         margin: 20px 0;
         color: white;
         line-height: 1.1;
@@ -1516,7 +1516,7 @@ button {
    CONTATO SECTION
    ============================================ */
 .contato {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 70px;
     padding: 80px 0 70px;
     background: #f4f6fd;
 }
