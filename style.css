@@ -324,6 +324,45 @@ button {
         top: 70px;
         left: 0;
         right: 0;
+
+        background: white;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        margin: 0;
+        padding: 0 20px;
+
+        border-bottom: 1px solid #eee;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+        height: 0;
+        overflow: hidden;
+
+        opacity: 0;
+        pointer-events: none;
+
+        transition: all 0.3s ease;
+
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .btn-secondary {
+        background: rgba(255, 255, 255, 0.863);
+        color: var(--text-dark);
+        padding: 12px 30px;
+        border: 2px solid var(--primary-color);
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    /* .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
         background: white;
         flex-direction: column;
         gap: 0;
@@ -336,10 +375,14 @@ button {
         transition: max-height 0.3s ease;
         justify-content: flex-start;
         align-items: flex-start;
-    }
+    } */
 
     .nav-links.active {
-        max-height: 300px;
+        height: auto;
+        padding: 20px;
+        opacity: 1;
+        pointer-events: all;
+        /* max-height: 300px; */
     }
 
     .nav-links a {
@@ -712,6 +755,70 @@ button {
         width: 200px;
         height: 200px;
         display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background: var(--primary-color); /* cor sólida */
+        background-image: none;
+    }
+
+    .hero-text {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background: linear-gradient(
+            rgba(122, 44, 191, 0.493),
+            rgba(122, 44, 191, 0.74)
+        ),
+        url('img/banner.png');
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .stat strong {
+        font-size: 32px;
+        color: white;
+    }
+
+    .stat p {
+        text-shadow: 0 2px 8px rgba(224, 224, 224, 0.438);
+        color: var(--text-dark);
+    }
+
+    .hero h1 {
+        font-size: 50px;
+        margin: 20px 0;
+        color: white;
+        line-height: 1.1;
+    }
+
+    .hero span.highlight {
+        color: var(--text-dark);
+        text-shadow: 0 2px 8px rgba(212, 212, 212, 0.4);
+    }
+
+    .hero-description {
+        color: white;
     }
 }
 
