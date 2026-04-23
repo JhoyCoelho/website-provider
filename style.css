@@ -84,7 +84,7 @@ button {
 
 .btn-secondary {
     background: transparent;
-    color: var(--text-dark);
+    color: var(--primary-color);
     padding: 12px 30px;
     border: 2px solid var(--primary-color);
     border-radius: 8px;
@@ -358,31 +358,11 @@ button {
         font-size: 16px;
     }
 
-    /* .nav-links {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-        padding: 20px;
-        border-bottom: 1px solid #eee;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        justify-content: flex-start;
-        align-items: flex-start;
-    } */
-
     .nav-links.active {
         height: auto;
         padding: 20px;
         opacity: 1;
         pointer-events: all;
-        /* max-height: 300px; */
     }
 
     .nav-links a {
@@ -481,15 +461,24 @@ button {
    HERO SECTION
    ============================================ */
 .hero {
+    position: relative;
     scroll-margin-top: 80px;
-    padding: 80px 0 80px;
+    padding: 80px 0;
     overflow: hidden;
-    background-image: url('img/banner.png'); /* caminho da imagem */
-    background-size: cover;       /* cobre toda a área */
-    background-position: center;  /* centraliza */
-    background-repeat: no-repeat; /* evita repetição */
 
-    padding: 60px 20px; /* só pra dar espaço interno */
+    background: 
+        linear-gradient(
+            90deg,
+            rgba(10, 10, 25, 0.85) 0%,
+            rgba(10, 10, 25, 0.75) 40%,
+            rgba(10, 10, 25, 0.4) 70%,
+            rgba(10, 10, 25, 0.1) 100%
+        ),
+        url('img/banner.png');
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
 }
 
 @media (max-width: 768px) {
@@ -562,7 +551,7 @@ button {
 .hero h1 {
     font-size: 70px;
     margin: 20px 0;
-    color: var(--text-dark);
+    color: white;
     line-height: 1.1;
 }
 
@@ -595,7 +584,7 @@ button {
 
 .hero-description {
     font-size: 18px;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.85);
     margin: 20px 0 40px;
     line-height: 1.8;
     max-width: 500px;
@@ -659,13 +648,13 @@ button {
 
 .stat strong {
     font-size: 32px;
-    color: var(--primary-color);
+    color: white;
 }
 
 .stat p {
-    color: var(--text-dark);
+    color: rgba(255,255,255,0.7);
     font-size: 14px;
-    margin-top: -5px;
+    /* margin-top: -5px; */
     font-weight: normal;
 }
 
@@ -760,8 +749,18 @@ button {
 
 @media (max-width: 768px) {
     .hero {
-        background: var(--primary-color); /* cor sólida */
-        background-image: none;
+        padding: 50px 16px;
+
+        background: 
+            linear-gradient(
+                rgba(10, 10, 25, 0.85),
+                rgba(10, 10, 25, 0.85)
+            ),
+            url('img/banner.png');
+
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     .hero-text {
@@ -769,7 +768,19 @@ button {
         margin: 0 auto;
     }
 
+    .hero h1 {
+        font-size: 40px;
+        margin: 20px 0;
+        color: white;
+        line-height: 1.2;
+    }
+
+    .hero span.highlight {
+        color: var(--primary-color);
+    }
+
     .hero-description {
+        color: rgba(255, 255, 255, 0.85);
         margin-left: auto;
         margin-right: auto;
     }
@@ -780,45 +791,17 @@ button {
 
     .hero-stats {
         justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        background: linear-gradient(
-            rgba(122, 44, 191, 0.493),
-            rgba(122, 44, 191, 0.74)
-        ),
-        url('img/banner.png');
-
-        background-size: cover;
-        background-position: center;
+        gap: 20px;
     }
 
     .stat strong {
-        font-size: 32px;
+        font-size: 28px;
         color: white;
     }
 
     .stat p {
-        text-shadow: 0 2px 8px rgba(224, 224, 224, 0.438);
-        color: var(--text-dark);
-    }
-
-    .hero h1 {
-        font-size: 40px;
-        margin: 20px 0;
-        color: white;
-        line-height: 1.1;
-    }
-
-    .hero span.highlight {
-        color: var(--text-dark);
-        text-shadow: 0 2px 8px rgba(212, 212, 212, 0.4);
-    }
-
-    .hero-description {
-        color: white;
+        color: rgba(255,255,255,0.7);
+        text-shadow: none;
     }
 }
 
@@ -876,7 +859,7 @@ button {
 }
 
 .btn-primary:hover {
-    transform: scale(1.03);
+    filter: brightness(1.1);
 }
 
 .planos {
