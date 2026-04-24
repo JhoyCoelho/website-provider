@@ -44,43 +44,55 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ============================================
    FORMULÁRIO DE CONTATO
    ============================================ */
-document.getElementById("form-contato")?.addEventListener("submit", function(e) {
+document.querySelector('.contato-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const nome = document.getElementById("nome")?.value.trim() || "";
-    const email = document.getElementById("email")?.value.trim() || "";
-    const contato = document.getElementById("contato")?.value.trim() || "";
-    const mensagem = document.getElementById("mensagem")?.value.trim() || "";
+    const formData = {
+        name: this.querySelector('#nome')?.value.trim() || "",
+        email: this.querySelector('#email')?.value.trim() || "",
+        phone: this.querySelector('#telefone')?.value.trim() || "",
+        message: this.querySelector('#mensagem')?.value.trim() || ""
+    };
 
-    if (!nome || !email || !contato || !mensagem) {
-        alert("Por favor, preencha todos os campos.");
+    // Validação
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+        alert('Por favor, preencha todos os campos.');
         return;
     }
 
+    // Validar email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneNumbersOnly = contato.replace(/\D/g, "");
-
-    if (!emailRegex.test(email)) {
-        alert("Por favor, insira um email válido.");
+    if (!emailRegex.test(formData.email)) {
+        alert('Por favor, insira um email válido.');
         return;
     }
 
+    // Validar telefone (10 ou 11 dígitos)
+    const phoneNumbersOnly = formData.phone.replace(/\D/g, "");
     if (phoneNumbersOnly.length < 10 || phoneNumbersOnly.length > 11) {
-        alert("Por favor, insira um telefone válido com DDD.");
+        alert('Por favor, insira um telefone válido com DDD.');
         return;
     }
 
+    // 🔥 AQUI ESTÁ A MÁGICA
     const numero = "5591986263316";
 
-    const texto = `Olá, me chamo ${nome}.
-Meu email: ${email}
-Meu contato: ${contato}
-Mensagem: ${mensagem}`;
+    const texto = `Olá, me chamo ${formData.name}.
+Meu email: ${formData.email}
+Meu contato: ${formData.phone}
+Mensagem: ${formData.message}`;
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-    window.open(url, "_blank");
+    // Abre o WhatsApp
+    window.open(url, '_blank');
 
+    // Feedback visual rápido
+    setTimeout(() => {
+        alert('Redirecionando para o WhatsApp...');
+    }, 300);
+
+    // Limpa o formulário
     this.reset();
 });
 
