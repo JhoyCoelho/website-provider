@@ -44,36 +44,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 /* ============================================
    FORMULÁRIO DE CONTATO
    ============================================ */
-document.querySelector('.contato-form')?.addEventListener('submit', function(e) {
+document.getElementById("form-contato")?.addEventListener("submit", function(e) {
     e.preventDefault();
 
-    const formData = {
-        name: this.querySelector('input[placeholder="Seu nome"]').value,
-        email: this.querySelector('input[placeholder="seu@email.com"]').value,
-        phone: this.querySelector('input[placeholder="(XX) XXXXX-XXXX"]').value,
-        message: this.querySelector('textarea').value
-    };
+    const nome = document.getElementById("nome")?.value.trim() || "";
+    const email = document.getElementById("email")?.value.trim() || "";
+    const contato = document.getElementById("contato")?.value.trim() || "";
+    const mensagem = document.getElementById("mensagem")?.value.trim() || "";
 
-    // Validações
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
-        alert('Por favor, preencha todos os campos.');
+    // Validação simples
+    if (!nome || !email || !contato || !mensagem) {
+        alert("Por favor, preencha todos os campos.");
         return;
     }
 
-    // Validar email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-        alert('Por favor, insira um email válido.');
-        return;
-    }
+    const numero = "5591986263316";
 
-    // Aqui você pode enviar os dados para seu servidor
-    console.log('Dados do formulário:', formData);
+    const texto = `Olá, me chamo ${nome}.
+        Meu email: ${email}
+        Meu contato: ${contato}
+        Mensagem: ${mensagem}`;
 
-    // Mensagem de sucesso
-    alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
-    // Limpar formulário
+    window.open(url, "_blank");
+
+    // Limpa o formulário depois de enviar
     this.reset();
 });
 
@@ -207,28 +203,6 @@ if (phoneInput) {
         e.target.value = value;
     });
 }
-
-/* ============================================
-   FORMULÁRIO DE CONTATO VIA WHATSAPP 
-   ============================================ */
-document.getElementById("form-contato").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const contato = document.getElementById("contato").value;
-    const mensagem = document.getElementById("mensagem").value;
-
-    const numero = "5591986263316"; // Substitua pelo número do WhatsApp da empresa
-
-    const texto = `Olá, me chamo ${nome}.
-        Meu email: ${email}
-        Meu contato: ${contato}
-        Mensagem: ${mensagem}`;
-
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
-    window.open(url, '_blank');
-});
 
 /* ============================================
    EFEITOS ADICIONAIS
