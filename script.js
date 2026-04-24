@@ -52,24 +52,35 @@ document.getElementById("form-contato")?.addEventListener("submit", function(e) 
     const contato = document.getElementById("contato")?.value.trim() || "";
     const mensagem = document.getElementById("mensagem")?.value.trim() || "";
 
-    // Validação simples
     if (!nome || !email || !contato || !mensagem) {
         alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneNumbersOnly = contato.replace(/\D/g, "");
+
+    if (!emailRegex.test(email)) {
+        alert("Por favor, insira um email válido.");
+        return;
+    }
+
+    if (phoneNumbersOnly.length < 10 || phoneNumbersOnly.length > 11) {
+        alert("Por favor, insira um telefone válido com DDD.");
         return;
     }
 
     const numero = "5591986263316";
 
     const texto = `Olá, me chamo ${nome}.
-        Meu email: ${email}
-        Meu contato: ${contato}
-        Mensagem: ${mensagem}`;
+Meu email: ${email}
+Meu contato: ${contato}
+Mensagem: ${mensagem}`;
 
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
 
-    // Limpa o formulário depois de enviar
     this.reset();
 });
 
